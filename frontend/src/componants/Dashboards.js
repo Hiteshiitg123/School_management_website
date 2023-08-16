@@ -1,14 +1,13 @@
 import React from 'react'
+import AdminDashboard from './AdminDashboard'
+
 
 export default function Dashboards() {
 
-    const handleLogout = () => {
-        localStorage.removeItem("authToken");
-        window.location.href = "/";
-    }
-
 
   return (
-    <button type="button" class="btn btn-danger" onClick={handleLogout}>Logout</button>
+    <div className='dashboard'>
+      <AdminDashboard />
+    </div>
   )
 }
