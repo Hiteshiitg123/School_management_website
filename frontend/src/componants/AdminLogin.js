@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import './loginPage.css'
 import axios from 'axios';
-import { set } from 'mongoose';
 
 export default function AdminLogin() {
     const [username, setUsername] = useState('');
@@ -22,6 +21,10 @@ export default function AdminLogin() {
             // Process the response (e.g., store tokens, redirect, etc.)
             const token = response.data.token;
             localStorage.setItem("authToken", token);
+            if(token)
+            {
+                localStorage.setItem("role", 0);
+            }
 
         } catch (error) {
             console.error("Authentication failed:", error);
